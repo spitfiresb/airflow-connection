@@ -29,10 +29,10 @@ with DAG(
     catchup=False,
 ) as dag:
 
-    connection_string = "mongodb+srv://username:password@cluster.mongodb.net/"
+    connection_string = "connection_string"
     mongo_connection = MongoDBConnection(connection_string)
     data_extractor = DataExtractor(
-        connection_string, "conversation-manager_db", "CustomerTopicEvents"
+        connection_string, "database_name", "collection_name"
     )
     data_processor = DataProcessor()
 
